@@ -1,0 +1,16 @@
+# 环境与密钥
+.env
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# 临时文件
+*.log

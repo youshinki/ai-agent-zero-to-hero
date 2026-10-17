@@ -1,0 +1,12 @@
+{
+  "trace_id": "tr_8f3a21",
+  "tenant_id": "client_a",
+  "session_id": "sess_001",
+  "steps": [
+    {"step": "retrieve", "ms": 320, "tokens_in": 1200},
+    {"step": "call_tool", "tool": "get_order", "ms": 500},
+    {"step": "generate", "ms": 2400, "tokens_out": 350}
+  ],
+  "model": "gpt-4o-mini",
+  "total_ms": 3220
+}

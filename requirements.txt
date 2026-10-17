@@ -1,0 +1,27 @@
+# AI Agent 实战示例代码依赖（按文章实际用法归纳，宽松版本约束）
+# 使用前请先 pip install -r requirements.txt
+
+# --- 核心依赖 ---
+openai>=1.0   # OpenAI API
+chromadb>=0.4   # 向量库
+langchain>=0.1   # LangChain 框架
+langchain-community>=0.0.10   # LangChain 社区组件
+langchain-openai>=0.1   # LangChain OpenAI 集成
+langchain-chroma>=0.1   # LangChain Chroma 集成
+fastapi>=0.100   # API 服务
+uvicorn>=0.20   # ASGI 服务器
+pydantic>=2.0   # 数据校验
+requests>=2.28   # HTTP 客户端
+crewai>=0.1   # 多智能体框架（第11篇）
+python-dotenv>=1.0   # 环境变量加载
+faiss-cpu>=1.7   # 向量检索（第9篇）
+numpy>=1.24   # 数值计算
+PyPDF2>=3.0   # PDF 解析（第22篇）
+python-docx>=1.0   # Word 解析（第22篇）
+apscheduler>=3.10   # 定时任务（第16篇）
+sentence-transformers>=2.2   # 嵌入模型（第56篇）
+redis>=5.0   # 缓存/队列（第64篇）
+starlette>=0.27   # ASGI 框架（随 fastapi 安装）
+
+# 说明：部分文章代码使用相对导入（如 from config / from core import ...），
+# 运行前请按该篇 README 中的项目结构放置文件并自行创建 .env 配置密钥。
