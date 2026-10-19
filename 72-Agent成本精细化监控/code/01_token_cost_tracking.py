@@ -6,5 +6,5 @@ def call_model(model, messages, tenant_id, task_id, step):
     redis.hincrby(f"cost:{tenant_id}:{month()}", "tokens_out", usage.completion_tokens)
     log.info("token_usage",
              tenant_id=tenant_id, task_id=task_id, step=step,
-             model=model, in=usage.prompt_tokens, out=usage.completion_tokens)
+             model=model, tokens_in=usage.prompt_tokens, tokens_out=usage.completion_tokens)
     return resp.choices[0].message.content

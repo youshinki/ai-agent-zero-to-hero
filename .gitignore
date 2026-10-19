@@ -14,3 +14,22 @@ venv/
 
 # 临时文件
 *.log
+
+# 运行/测试生成物
+**/knowledge_base/kb_store.json
+**/knowledge_base/memory_store.json
+**/knowledge_base/upload_doc/manual.docx
+**/chat_memory/
+**/chat_memory_test/
+**/auto_task_log/
+**/auto_task_log_test/
+**/storage/
+**/output/
+**/cases_output/
+**/demo_sessions.json
+**/test_sessions.json
+**/sessions.json
+output.txt
+result.txt
+calc_result.txt
+data_summary.txt
