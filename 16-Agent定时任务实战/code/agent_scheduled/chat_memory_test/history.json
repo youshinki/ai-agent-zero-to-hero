@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "我是一名AI开发者，擅长Agent工程化"
+  },
+  {
+    "role": "assistant",
+    "content": "好的，已记住。"
+  },
+  {
+    "role": "user",
+    "content": "今天完成了RAG知识库模块"
+  },
+  {
+    "role": "assistant",
+    "content": "进展不错。"
+  }
+]

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 智能对话助手</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f5f7fa; font-family: "Microsoft Yahei", sans-serif; }
+        .container {
+            max-width: 1000px; margin: 0 auto; height: 100vh;
+            display: flex; flex-direction: column; padding: 20px;
+        }
+        .title {
+            text-align: center; font-size: 24px; font-weight: bold;
+            color: #222; margin-bottom: 20px;
+        }
+        /* 聊天窗口 */
+        .chat-box {
+            flex: 1; overflow-y: auto; background: #fff; border-radius: 12px;
+            padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 12px #00000010;
+        }
+        .msg-item { margin-bottom: 16px; display: flex; }
+        .user-msg { justify-content: flex-end; }
+        .msg-content {
+            max-width: 70%; padding: 12px 16px; border-radius: 10px;
+            line-height: 1.6; white-space: pre-wrap; word-break: break-word;
+        }
+        .ai-msg .msg-content { background: #f0f4ff; color: #222; }
+        .user-msg .msg-content { background: #367bfa; color: #fff; }
+        /* 输入区域 */
+        .input-box { display: flex; gap: 10px; }
+        #input-text {
+            flex: 1; height: 48px; padding: 0 16px; border: 1px solid #ddd;
+            border-radius: 8px; font-size: 16px; outline: none;
+        }
+        #input-text:focus { border-color: #367bfa; }
+        #send-btn {
+            width: 90px; height: 48px; border: none; background: #367bfa;
+            color: #fff; border-radius: 8px; font-size: 16px; cursor: pointer;
+        }
+        #send-btn:disabled { background: #94b8fa; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">AI Agent 智能对话助手（自研规划-执行-反思闭环）</div>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="input-box">
+            <input type="text" id="input-text" placeholder="请输入你的问题..." autocomplete="off">
+            <button id="send-btn">发送</button>
+        </div>
+    </div>
+    <script>
+        const chatBox = document.getElementById("chatBox");
+        const inputText = document.getElementById("input-text");
+        const sendBtn = document.getElementById("send-btn");
+
+        // 服务地址（如后端端口不同，改这里）
+        const API_URL = "http://127.0.0.1:8000/api/agent/stream";
+
+        // 滚动到底部
+        function scrollBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // 添加消息气泡（用 textContent 防XSS）
+        function addMsg(text, isUser = false) {
+            const div = document.createElement("div");
+            div.className = `msg-item ${isUser ? "user-msg" : "ai-msg"}`;
+            const content = document.createElement("div");
+            content.className = "msg-content";
+            content.textContent = text;
+            div.appendChild(content);
+            chatBox.appendChild(div);
+            scrollBottom();
+            return div;
+        }
+
+        // 发送请求
+        async function sendMessage() {
+            const text = inputText.value.trim();
+            if (!text) return;
+
+            // 用户消息
+            addMsg(text, true);
+            inputText.value = "";
+            sendBtn.disabled = true;
+
+            // AI占位气泡
+            let aiDom = addMsg("");
+            let contentDom = aiDom.querySelector(".msg-content");
+            let fullText = "";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ task: text })
+                });
+
+                // 流式逐字读取
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder("utf-8");
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    const chunk = decoder.decode(value, { stream: true });
+                    const lines = chunk.split("\n").filter(line => line);
+                    for (let line of lines) {
+                        try {
+                            const data = JSON.parse(line);
+                            fullText += data.char;
+                            contentDom.textContent = fullText;
+                            scrollBottom();
+                        } catch (e) {
+                            // 忽略不完整分片
+                        }
+                    }
+                }
+                if (!fullText) contentDom.textContent = "（服务返回空内容）";
+            } catch (e) {
+                contentDom.textContent = "服务请求失败，请检查后端服务是否启动！";
+            }
+            sendBtn.disabled = false;
+        }
+
+        // 绑定事件
+        sendBtn.addEventListener("click", sendMessage);
+        inputText.addEventListener("keydown", e => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>
