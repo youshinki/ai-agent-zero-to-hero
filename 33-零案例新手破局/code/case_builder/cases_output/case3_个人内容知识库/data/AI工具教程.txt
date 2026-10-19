@@ -1,0 +1,4 @@
+AI工具教程
+提示词技巧：角色+任务+格式+约束四段式。
+常用工具：ChatGPT、Claude、DeepSeek、Midjourney。
+避坑：不要一次给太多要求，分步迭代效果更好。
