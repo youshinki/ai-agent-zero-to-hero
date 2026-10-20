@@ -5,8 +5,11 @@
 """
 
 from edge_agent import (
-    MODELS, QUANTIZATION, Device, ModelSelector,
-    EdgeCloudRouter, compare_edge_cloud, demo,
+    Device,
+    ModelSelector,
+    EdgeCloudRouter,
+    compare_edge_cloud,
+    demo,
 )
 
 

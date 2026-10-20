@@ -14,7 +14,7 @@ RAG 幻觉深度根治：事实校验、引用溯源、冲突文档自动检测
 """
 
 import re
-from typing import Dict, List, Optional
+from typing import (Dict, List)
 
 
 # ======================================================================

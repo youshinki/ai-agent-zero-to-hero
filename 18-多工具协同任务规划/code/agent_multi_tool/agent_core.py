@@ -16,7 +16,7 @@ import re
 import time
 from typing import Any, Dict, List
 
-from config import USE_MOCK, MODEL_NAME, MAX_RETRY, MODEL_API_KEY, MODEL_BASE_URL
+from config import (USE_MOCK, MODEL_NAME, MODEL_API_KEY, MODEL_BASE_URL)
 from memory_utils import compress_history, build_context
 from tools.tool_manager import create_default_tools
 

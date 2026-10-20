@@ -7,8 +7,10 @@
 import random
 
 from model_router import (
-    MODELS, FAILOVER_CHAIN, ModelRouter, CircuitBreaker,
-    RobustRouter, demo,
+    ModelRouter,
+    CircuitBreaker,
+    RobustRouter,
+    demo,
 )
 
 

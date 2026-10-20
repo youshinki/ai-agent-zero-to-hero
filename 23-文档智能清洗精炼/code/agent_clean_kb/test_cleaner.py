@@ -16,7 +16,6 @@ import os
 
 from knowledge_base.text_cleaner import cleaner
 from knowledge_base.kb_core import kb
-from knowledge_base.parse_doc import parse_file_to_text
 
 UPLOAD_DIR = "knowledge_base/upload_doc"
 

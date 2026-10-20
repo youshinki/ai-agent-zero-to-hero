@@ -14,7 +14,6 @@
 运行: python industry_qa_agent.py
 """
 
-import re
 from typing import Dict, List, Optional
 
 

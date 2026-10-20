@@ -14,7 +14,7 @@ ReAct 模式深度剖析：Thought → Action → Observation 循环底层实现
 """
 
 import re
-from typing import Dict, List, Optional
+from typing import (Dict, List)
 
 
 # ======================================================================

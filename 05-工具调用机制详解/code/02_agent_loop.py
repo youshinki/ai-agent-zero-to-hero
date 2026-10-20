@@ -1,3 +1,7 @@
+# 【片段说明】本文件为文章正文代码摘录，依赖文中前文定义的变量/函数
+#（如 search_web、llm_decide_tool 等），单独运行会报 NameError。
+# 完整可运行版本见同目录 01_tool_calling_full.py。
+
 # ---- 片段：工具执行与Agent工具调用主循环（block 7）----
 def execute_tool(tool_name, parameters):
     if tool_name == "web_search":

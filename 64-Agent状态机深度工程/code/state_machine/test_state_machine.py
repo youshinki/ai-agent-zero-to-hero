@@ -8,7 +8,11 @@ import os
 import time
 
 from state_machine import (
-    STATES, TERMINAL, Session, SessionStore, InvalidTransition, demo,
+    STATES,
+    TERMINAL,
+    SessionStore,
+    InvalidTransition,
+    demo,
 )
 
 

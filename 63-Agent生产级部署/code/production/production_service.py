@@ -18,7 +18,7 @@ import json
 import random
 import time
 import uuid
-from typing import Dict, Optional
+from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Header
 from pydantic import BaseModel

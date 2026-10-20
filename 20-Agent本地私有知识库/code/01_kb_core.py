@@ -120,5 +120,5 @@ kb = LocalKnowledgeBase()
 
 # ===== config.py：向量嵌入模型配置 =====
 
-# 向量嵌入模型配置
-EMBED_MODEL_NAME = "text-embedding-ada-002"
+# 向量嵌入模型配置（写入 .env 或 config.py，供 kb_core.py 导入）
+# EMBED_MODEL_NAME = "text-embedding-ada-002"

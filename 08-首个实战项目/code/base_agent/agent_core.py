@@ -14,13 +14,12 @@
 ==========================================================================
 """
 
-import json
 import time
-from typing import Dict, List, Optional, Tuple
+from typing import (Dict, List)
 
 from config import (
     MODEL_API_KEY, MODEL_BASE_URL, MODEL_NAME,
-    USE_MOCK, MAX_THOUGHT_STEPS, MAX_RETRY, MAX_HISTORY, VERBOSE,
+    USE_MOCK, MAX_RETRY, MAX_HISTORY, VERBOSE,
 )
 
 

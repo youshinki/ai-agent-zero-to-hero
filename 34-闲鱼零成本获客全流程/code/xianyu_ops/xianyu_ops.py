@@ -15,7 +15,6 @@
 """
 
 import os
-from datetime import datetime, timedelta
 
 OUTPUT_DIR = "output"
 

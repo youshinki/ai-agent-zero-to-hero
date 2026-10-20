@@ -18,7 +18,7 @@ RAG知识库核心：加载 → 分块 → 向量化 → 存储 → 检索
 import math
 import os
 import re
-from typing import Dict, List, Tuple
+from typing import (Dict, List)
 
 from config import (
     USE_MOCK, EMBED_MODEL_NAME, MODEL_API_KEY, MODEL_BASE_URL,

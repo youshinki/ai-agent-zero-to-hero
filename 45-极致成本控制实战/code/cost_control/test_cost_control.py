@@ -8,8 +8,12 @@
 """
 
 from cost_engine import (
-    Meter, SemanticCache, Compressor, Router,
-    BudgetGuard, CostOptimizer, demo,
+    Meter,
+    SemanticCache,
+    Compressor,
+    Router,
+    BudgetGuard,
+    demo,
 )
 
 

@@ -13,8 +13,11 @@
 """
 
 from cost_optimizer import (
-    TokenCounter, PromptCompressor, SemanticCache,
-    ModelRouter, BatchProcessor, BudgetGuard,
+    TokenCounter,
+    PromptCompressor,
+    ModelRouter,
+    BatchProcessor,
+    BudgetGuard,
 )
 from commercial_service import OptimizedService
 

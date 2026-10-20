@@ -5,7 +5,11 @@
 """
 
 from prompt_chain import (
-    ChainStep, MockLLM, PromptChain, BranchChain, COMPARISON, demo,
+    ChainStep,
+    PromptChain,
+    BranchChain,
+    COMPARISON,
+    demo,
 )
 
 

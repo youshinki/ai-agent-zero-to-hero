@@ -9,7 +9,7 @@
 
 from fastapi.testclient import TestClient
 
-from api_service import app, ok, fail, ERROR_CODES, AgentSDK
+from api_service import (app, fail, ERROR_CODES, AgentSDK)
 
 client = TestClient(app)
 

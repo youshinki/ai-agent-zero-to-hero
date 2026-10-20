@@ -13,7 +13,10 @@ import uuid
 from fastapi.testclient import TestClient
 
 from production_service import (
-    app, limiter, router, model_service, CanaryRouter,
+    app,
+    router,
+    model_service,
+    CanaryRouter,
 )
 
 client = TestClient(app)

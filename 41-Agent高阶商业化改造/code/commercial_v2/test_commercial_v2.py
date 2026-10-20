@@ -11,8 +11,12 @@ import os
 import shutil
 
 from commercial_v2 import (
-    Environment, DebugScanner, FriendlyErrors, DEBUG_CLEANUP,
-    build_env_template, build_checklist, OUTPUT_DIR,
+    Environment,
+    DebugScanner,
+    FriendlyErrors,
+    build_env_template,
+    build_checklist,
+    OUTPUT_DIR,
 )
 
 

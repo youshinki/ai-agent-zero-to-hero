@@ -4,7 +4,6 @@
 第54篇配套 · test_function_calling.py
 """
 
-import json
 
 from function_calling import (
     TOOLS, SchemaValidator, ToolRuntime, MockModel,
@@ -59,7 +58,6 @@ def main():
     print("   ✅ 完整问答闭环")
 
     print("\n[6] 参数错误兜底：")
-    import function_calling as fc
     original = MockModel.decide
     MockModel.decide = staticmethod(lambda q: [
         {"name": "calculator", "arguments": "{bad json"}])

@@ -14,7 +14,6 @@
 
 import ast
 import datetime
-import os
 from typing import Any, Dict
 
 from config import SAFE_EVAL_MAX_LENGTH

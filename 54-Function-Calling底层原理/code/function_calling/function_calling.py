@@ -14,7 +14,7 @@ Function Calling 底层原理：模型决策 + 代码执行 的完整闭环
 """
 
 import json
-from typing import Any, Dict, List
+from typing import (Dict, List)
 
 
 # ======================================================================

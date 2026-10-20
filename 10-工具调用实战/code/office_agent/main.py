@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from agent_core import OfficeAgent
 from rag_core import RAGCore
-from config import USE_MOCK, VERBOSE
+from config import USE_MOCK
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

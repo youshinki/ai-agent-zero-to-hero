@@ -12,8 +12,11 @@ import time
 from typing import Any, Dict
 
 from config import (
-    USE_MOCK, MODEL_NAME, VERBOSE, MAX_RETRY,
-    MODEL_API_KEY, MODEL_BASE_URL,
+    USE_MOCK,
+    MODEL_NAME,
+    MAX_RETRY,
+    MODEL_API_KEY,
+    MODEL_BASE_URL,
 )
 
 

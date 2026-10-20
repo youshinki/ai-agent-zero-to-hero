@@ -17,7 +17,7 @@ import time
 from typing import List, Optional
 
 from config import USE_MOCK, MODEL_NAME, VERBOSE
-from tool_core import TOOLS_DEFINITION, execute_tool, TOOL_NAMES
+from tool_core import (TOOLS_DEFINITION, execute_tool)
 
 
 # ======================================================================

@@ -16,7 +16,7 @@
 import asyncio
 import json
 import time
-from typing import AsyncGenerator, Dict, List, Optional
+from typing import (AsyncGenerator, Dict, Optional)
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import StreamingResponse

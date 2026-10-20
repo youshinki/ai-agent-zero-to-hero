@@ -5,7 +5,12 @@
 """
 
 from multi_agent import (
-    Agent, MessageBus, Pipeline, Debate, Hierarchical, mock_agents, demo,
+    Agent,
+    MessageBus,
+    Pipeline,
+    Debate,
+    Hierarchical,
+    demo,
 )
 
 

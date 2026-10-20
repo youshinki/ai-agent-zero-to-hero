@@ -12,7 +12,7 @@ import os
 import re
 from typing import Dict, List
 
-from config import CHUNK_SIZE, CHUNK_OVERLAP, TOP_K, VERBOSE, USE_MOCK
+from config import (CHUNK_SIZE, CHUNK_OVERLAP, TOP_K, VERBOSE)
 
 
 class RAGCore:

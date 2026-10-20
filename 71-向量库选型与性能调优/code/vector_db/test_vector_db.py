@@ -7,8 +7,15 @@
 import random
 
 from vector_db import (
-    Doc, random_vec, cosine, FlatIndex, IVFIndex, HNSWIndex,
-    ShardedIndex, diagnose, TUNING, demo,
+    Doc,
+    random_vec,
+    FlatIndex,
+    IVFIndex,
+    HNSWIndex,
+    ShardedIndex,
+    diagnose,
+    TUNING,
+    demo,
 )
 
 

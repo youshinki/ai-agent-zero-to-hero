@@ -14,7 +14,6 @@
 """
 
 import os
-from datetime import datetime
 
 OUTPUT_DIR = "cases_output"
 

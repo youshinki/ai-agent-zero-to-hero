@@ -19,7 +19,6 @@
 """
 
 import os
-import re
 import zipfile
 from xml.etree import ElementTree as ET
 
